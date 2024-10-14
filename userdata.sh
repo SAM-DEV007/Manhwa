@@ -9,6 +9,8 @@ git clone "$GIT_REPO_URL" "/home/ubuntu/$PROJECT_MAIN_DIR_NAME"
 
 cd "/home/ubuntu/$PROJECT_MAIN_DIR_NAME"
 
+# Hidden environment variables
+
 chmod +x scripts/*.sh
 
 ./scripts/instance_os_dependencies.sh
