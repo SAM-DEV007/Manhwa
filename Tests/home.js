@@ -27,6 +27,7 @@ window.onload = function(){
 
             let img = document.createElement('img');
             img.src = `Images/${list_current.img_name}`;
+            img.alt = list_current.title.slice(3);
             ul.appendChild(img);
 
             for (let k = 0; k < list_current.points.length; k++) {
