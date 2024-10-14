@@ -26,7 +26,7 @@ window.onload = function(){
             ul.appendChild(h3);
 
             let img = document.createElement('img');
-            img.src = `Images/${list_current.img_name}`;
+            img.src = `https://manhwa-django-static-1234.s3.ap-south-1.amazonaws.com/Images/${list_current.img_name}`;
             img.alt = list_current.title.slice(3);
             ul.appendChild(img);
 
