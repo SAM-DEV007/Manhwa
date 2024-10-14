@@ -20,6 +20,7 @@ echo "Activating virtual environment..."
 source "/home/ubuntu/$PROJECT_MAIN_DIR_NAME/venv/bin/activate"
 
 # Run collectstatic command
+cd "/home/ubuntu/$PROJECT_MAIN_DIR_NAME/Manhwa"
 echo "Running collectstatic command..."
 python manage.py collectstatic --noinput
 
