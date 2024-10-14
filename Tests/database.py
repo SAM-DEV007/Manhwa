@@ -25,9 +25,9 @@ if __name__ == '__main__':
 
         cursor = conn.cursor()
 
-        # cursor.execute('CREATE TABLE Manhwa (id SERIAL PRIMARY KEY, data JSONB)')
-        # cursor.execute('INSERT INTO Manhwa (data) VALUES (%s)', (data,))
+        # cursor.execute('CREATE TABLE home_manhwa (id SERIAL PRIMARY KEY, data JSONB)')
+        # cursor.execute('INSERT INTO home_manhwa (data) VALUES (%s)', (data,))
 
-        cursor.execute('SELECT * FROM Manhwa')
+        cursor.execute('SELECT * FROM home_manhwa')
         print(cursor.fetchall())
         
