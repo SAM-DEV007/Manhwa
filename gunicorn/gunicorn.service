@@ -5,11 +5,11 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/Manhwa
+WorkingDirectory=/home/ubuntu/Manhwa/Manhwa
 ExecStart=/home/ubuntu/Manhwa/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind 0.0.0.0:8000 \
-          Manhwa.Manhwa.wsgi:application
+          Manhwa.wsgi:application
 [Install]
 WantedBy=multi-user.target
