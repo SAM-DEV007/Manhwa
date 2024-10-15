@@ -3,11 +3,8 @@ import os
 
 from pathlib import Path
 
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except:
-    pass
+from dotenv import load_dotenv
+load_dotenv()
 
 if __name__ == '__main__':
     with open(Path(__file__).parent.resolve() / 'manhwa.json', 'r') as f:
