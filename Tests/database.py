@@ -11,10 +11,10 @@ if __name__ == '__main__':
         data = f.read()
 
     with psycopg2.connect(
-        host=os.getenv('HOST'),
-        port=os.getenv('PORT'),
-        user=os.getenv('USER'),
-        password=os.getenv('PASSWORD'),
+        host=os.getenv('DBHOST'),
+        port=os.getenv('DBPORT'),
+        user=os.getenv('DBUSER'),
+        password=os.getenv('DBPASSWORD'),
         database=os.getenv('DATABASE_NAME')
     ) as conn:
 
@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
         cursor = conn.cursor()
 
-        # cursor.execute('CREATE TABLE home_manhwa (id SERIAL PRIMARY KEY, data JSONB)')
-        # cursor.execute('INSERT INTO home_manhwa (data) VALUES (%s)', (data,))
+        cursor.execute('CREATE TABLE home_manhwa (id SERIAL PRIMARY KEY, data JSONB)')
+        cursor.execute('INSERT INTO home_manhwa (data) VALUES (%s)', (data,))
 
         cursor.execute('SELECT * FROM home_manhwa')
         print(cursor.fetchall())
