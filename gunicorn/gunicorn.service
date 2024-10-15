@@ -9,7 +9,7 @@ WorkingDirectory=/home/ubuntu/Manhwa
 ExecStart=/home/ubuntu/Manhwa/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
-          --bind 0.0.0.0:80 \
+          --bind 0.0.0.0:8000 \
           Manhwa.Manhwa.wsgi:application
 [Install]
 WantedBy=multi-user.target
