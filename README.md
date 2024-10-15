@@ -19,9 +19,14 @@ The 9 Best Fantasy Manhwa website hosted on AWS
     - The static files and the images are stored in S3 bucket with public view access.
     - A RDS database is used to save and load the JSON data for dynamic loading which is passed to JavaScript.
 - <ins>**Auto-scaling enabled**</ins>\
-  Auto-scaling is enabled supported by launch template, target group and load balancer. More [info]() is included here.
+  Auto-scaling is enabled supported by launch template, target group and load balancer. More [info](#auto-scaling) is included here.
 - <ins>**Security measures**</ins>
   - <ins>**Enabling HTTPS**</ins>\
     Domain name is added to hosted zones with Route 53 and SSL certificate generated from AWS Certificate Manager.
   - <ins>**Configure firewall**</ins>\
     Security groups are set-up with APN which allows access to only 80 (HTTP) and 443 (HTTPS), and are forwarded to 8000 (Deployment) port. The rest of the traffic from different ports are refused connection.
+
+## Auto-scaling
+The auto-scaling group uses Instance based auto-scaling, i.e., it auto-scales based on the CPU utilization of the instances. The minimum is set to 1 instance and maximum is set to 2 instances. The CPU utilization must reach more than 70% usage in order to trigger auto-scaling. It can also trigger in arbitrary shutdown/restart/crash of the instances.
+
+The support for auto-scaling is extended by launch template, trigger group and load balancer.
