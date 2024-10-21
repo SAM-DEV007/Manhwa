@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+PROJECT_MAIN_DIR_NAME="Manhwa"
+
+sudo rm -f /etc/nginx/sites-enabled/default
+
+sudo cp "/home/ubuntu/$PROJECT_MAIN_DIR_NAME/ngnix/$PROJECT_MAIN_DIR_NAME" "/etc/nginx/sites-available/$PROJECT_MAIN_DIR_NAME"
+sudo ln -s /etc/nginx/sites-available/$PROJECT_MAIN_DIR_NAME /etc/nginx/sites-enabled/
+
+sudo gpasswd -a www-data ubuntu
+
+sudo systemctl restart nginx
