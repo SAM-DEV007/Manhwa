@@ -35,7 +35,7 @@ The auto-scaling group uses Instance based auto-scaling, i.e., it auto-scales ba
 The support for auto-scaling is extended by launch template, trigger group and load balancer.\
 The launch template provides the overview of the instance and the operations to perform on launch. The User Data, which is executed on launch of an instance, is as follows:
 
-(The below script is for older version of the repository. All the contents are now shifted to ASG folder.)
+*NOTE: The below script is for older version of the repository. All the contents are now shifted to ASG folder.*
 ```bash
 #!/bin/bash
 set -e
