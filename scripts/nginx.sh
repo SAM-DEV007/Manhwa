@@ -4,7 +4,7 @@ PROJECT_MAIN_DIR_NAME="Manhwa"
 
 sudo rm -f /etc/nginx/sites-enabled/default
 
-sudo cp "/home/ubuntu/ngnix/$PROJECT_MAIN_DIR_NAME" "/etc/nginx/sites-available/$PROJECT_MAIN_DIR_NAME"
+sudo cp "/home/ubuntu/$PROJECT_MAIN_DIR_NAME/nginx/$PROJECT_MAIN_DIR_NAME" "/etc/nginx/sites-available/$PROJECT_MAIN_DIR_NAME"
 sudo ln -s /etc/nginx/sites-available/$PROJECT_MAIN_DIR_NAME /etc/nginx/sites-enabled/
 
 #sudo unlink /etc/nginx/sites-enabled/default
