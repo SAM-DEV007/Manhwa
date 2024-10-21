@@ -26,6 +26,7 @@ cd "/home/ubuntu/$PROJECT_MAIN_DIR_NAME/Manhwa"
 
 # Restart Gunicorn services
 echo "Restarting Gunicorn and Nginx services..."
+sudo systemctl restart nginx
 sudo service gunicorn restart
 sudo service nginx restart
 

@@ -9,5 +9,3 @@ sudo ln -s /etc/nginx/sites-available/$PROJECT_MAIN_DIR_NAME /etc/nginx/sites-en
 
 sudo unlink /etc/nginx/sites-enabled/default
 sudo gpasswd -a www-data ubuntu
-
-sudo systemctl restart nginx
