@@ -2,12 +2,13 @@
 The 9 Best Fantasy Manhwa website hosted on AWS
 
 ## Website links
-### Load balancer DNS
-- http://manhwa-loadbalancer-1444081216.ap-south-1.elb.amazonaws.com
+(Load balancer and Auto Scaling group is removed for cost saving)
+### IPv4
+- http://52.66.88.50
+- http://ec2-52-66-88-50.ap-south-1.compute.amazonaws.com/
 ### Domain
 <ins>Expiry on 15 October 2025</ins>
-- http://bestmanhwa.tech/
-- https://bestmanhwa.tech/
+(Pending DNS registration)
 
 ## Tasks
 - <ins>**Deploy a web application**</ins>\
@@ -31,6 +32,8 @@ The auto-scaling group uses Instance based auto-scaling, i.e., it auto-scales ba
 
 The support for auto-scaling is extended by launch template, trigger group and load balancer.\
 The launch template provides the overview of the instance and the operations to perform on launch. The User Data, which is executed on launch of an instance, is as follows:
+
+(The below script is for older version of the repository. All the contents are now shifted to ASG folder.)
 ```bash
 #!/bin/bash
 set -e
@@ -67,3 +70,50 @@ chmod +x scripts/*.sh
 The trigger group and load balancer makes sure that the user is forwarded to the correct port from the request coming from HTTP or HTTPS.\
 The load balancer is application-based and the public DNS is used to access the active instance of the application. It checks requests from port 80 (HTTP) and 443 (HTTPS), also defined in security group, and forwards the user to the target group.\
 The target group, then, forwards the user to the registered active and healthy instance with port 8000 (Deployment port).
+
+## EC2 Instance
+A single EC2 instance is currently being maintained with its IPv4 address and DNS hosting.
+
+User Data script:
+```bash
+#!/bin/bash
+set -e
+
+GIT_REPO_URL="https://github.com/SAM-DEV007/Manhwa.git"
+
+PROJECT_MAIN_DIR_NAME="Manhwa"
+
+git clone "$GIT_REPO_URL" "/home/ubuntu/$PROJECT_MAIN_DIR_NAME"
+
+cd "/home/ubuntu/$PROJECT_MAIN_DIR_NAME"
+
+cat <<EOF > .env
+SECRET_KEY=secret key
+
+DATABASE_NAME=database name
+DBUSER=user
+DBPASSWORD=pwd
+DBHOST=host name
+DBPORT=port
+
+AWS_ACCESS_KEY_ID=access key
+AWS_SECRET_ACCESS_KEY=secret access key
+AWS_STORAGE_BUCKET_NAME=s3 bucket
+EOF
+
+chmod +x scripts/*.sh
+
+./scripts/instance_os_dependencies.sh
+./scripts/python_dependencies.sh
+./scripts/gunicorn.sh
+./scripts/nginx.sh
+./scripts/start_app.sh
+```
+Connection to the instance:
+```bash
+ssh -i "manhwa.pem" ubuntu@ec2-52-66-88-50.ap-south-1.compute.amazonaws.com
+```
+Command line to install SSL certificate:
+```bash
+
+```
