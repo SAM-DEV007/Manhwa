@@ -73,7 +73,8 @@ The trigger group and load balancer makes sure that the user is forwarded to the
 The load balancer is application-based and the public DNS is used to access the active instance of the application. It checks requests from port 80 (HTTP) and 443 (HTTPS), also defined in security group, and forwards the user to the target group.\
 The target group, then, forwards the user to the registered active and healthy instance with port 8000 (Deployment port).
 
-## EC2 Instance
+## EC2 Instance - Cost Cutting Measures
+AutoScaling group, Target group, Load balancer and Launch templates are removed.\
 A single EC2 instance is currently being maintained with its IPv4 address and DNS hosting.
 
 User Data script:
