@@ -8,7 +8,9 @@ The 9 Best Fantasy Manhwa website hosted on AWS
 - http://ec2-52-66-88-50.ap-south-1.compute.amazonaws.com/
 ### Domain
 <ins>Expiry on 15 October 2025</ins>
-(Pending DNS registration)
+- http://www.bestmanhwa.tech/
+- https://wwww.bestmanhwa.tech/
+- https://www.bestmanhwa.tech/
 
 ## Tasks
 - <ins>**Deploy a web application**</ins>\
@@ -108,12 +110,4 @@ chmod +x scripts/*.sh
 ./scripts/gunicorn.sh
 ./scripts/nginx.sh
 ./scripts/start_app.sh
-```
-Connection to the instance:
-```bash
-ssh -i "manhwa.pem" ubuntu@ec2-52-66-88-50.ap-south-1.compute.amazonaws.com
-```
-Command line to install SSL certificate:
-```bash
-
 ```
