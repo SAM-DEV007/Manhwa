@@ -3,9 +3,7 @@ The 9 Best Fantasy Manhwa website hosted on AWS
 
 ## Website links
 **NOTE: Load balancer and Auto Scaling group is removed for cost saving and is replaced with Nginx. The Route53 and AWS Certificate manager is replaced with Cloudflare DNS.\**
-### IPv4
-- http://52.66.88.50
-- http://ec2-52-66-88-50.ap-south-1.compute.amazonaws.com/
+
 ### Domain
 <ins>Expiry on 15 October 2025</ins>
 - http://www.bestmanhwa.tech/
