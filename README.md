@@ -5,10 +5,7 @@ The 9 Best Fantasy Manhwa website hosted on AWS
 **NOTE: Load balancer and Auto Scaling group is removed for cost saving and is replaced with Nginx. The Route53 and AWS Certificate manager is replaced with Cloudflare DNS.\**
 
 ### Domain
-<ins>Expiry on 15 October 2025</ins>
-- http://www.bestmanhwa.tech/
-- https://wwww.bestmanhwa.tech/
-- https://www.bestmanhwa.tech/
+**The domain is removed to prevent incurring costs.**
 
 ## Tasks
 - <ins>**Deploy a web application**</ins>\
